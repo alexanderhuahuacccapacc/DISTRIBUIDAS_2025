@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms_marca
+    name: ms-marca
   profiles:
     active: development
   config:
