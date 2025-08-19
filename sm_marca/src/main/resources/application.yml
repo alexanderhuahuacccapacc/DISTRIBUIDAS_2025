@@ -4,5 +4,5 @@ spring:
   profiles:
     active: development
   config:
-    import: optional:configserver:http://root:1234567@localhost:8081
+    import: optional:configserver:http://root:1234567@localhost:7071
 
