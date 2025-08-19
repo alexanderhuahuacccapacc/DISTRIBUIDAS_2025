@@ -1,1 +1,16 @@
-spring.application.name=msm-config-serve
+server:
+  port: 7071
+spring:
+  application:
+    name: ms-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/alexanderhuahuacccapacc/DISTRIBUIDAS_2025.git # ruta del repositorio git
+          searchPaths: configm-data
+          default-label: main
+  security:
+    user:
+      name: root
+      password: 1234567
