@@ -1,8 +1,8 @@
 spring:
   application:
-    name: ms-marca
+    name: sm_marca
   profiles:
     active: development
   config:
-    import: optional:configserver:http://root:123456@localhost:7070
+    import: optional:configserver:http://root:123456@localhost:8081
 

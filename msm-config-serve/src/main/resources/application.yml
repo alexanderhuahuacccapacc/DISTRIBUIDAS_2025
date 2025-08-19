@@ -1,8 +1,8 @@
 server:
-  port: 7071
+  port: 8081
 spring:
   application:
-    name: ms-config-server
+    name: msm-config-serve
   cloud:
     config:
       server:
