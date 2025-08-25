@@ -5,6 +5,7 @@ import com.example.sm_marca.Service.MarcaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -12,6 +13,12 @@ import java.util.Optional;
 public class MarcaController {
     @Autowired
     private MarcaService marcaService;
+
+    @GetMapping
+    public List<Marca> listar() {
+        return marcaService.listar();
+    }
+
 
     @GetMapping("/{id}")
     public Optional<Marca> buscarPorId(@PathVariable Integer id) {

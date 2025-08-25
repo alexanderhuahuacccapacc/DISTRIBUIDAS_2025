@@ -1,0 +1,24 @@
+server:
+  port: 8090
+spring:
+
+  application:
+    name: PSTGRES_PRUEBA_2
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ms-marca
+    username: postgres
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
