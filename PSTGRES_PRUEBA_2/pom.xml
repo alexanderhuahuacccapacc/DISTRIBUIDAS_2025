@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>PSTGRES_PRUEBA_2</artifactId>
+    <artifactId>POSTGRES_PRUE_2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>PSTGRES_PRUEBA_2</name>
     <description>PSTGRES_PRUEBA_2</description>

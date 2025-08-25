@@ -1,6 +1,6 @@
 spring:
   application:
-    name: PSTGRES_PRUEBA_2
+    name: POSTGRES_PRUE_2
   profiles:
     active: development
   config:
