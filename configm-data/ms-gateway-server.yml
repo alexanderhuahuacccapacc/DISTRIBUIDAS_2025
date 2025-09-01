@@ -1,5 +1,5 @@
 server:
-  port: 8071
+  port: 9090
 
 
 eureka:
@@ -11,16 +11,20 @@ eureka:
 
 
 spring:
+  application:
+    name: ms-gateway-server
+
+
   cloud:
-
-
     gateway:
-      discovery:
-        locator:
-          enable: true
-      routes:
-        - id: ms-catalogo-service
-          uri: lb://ms-catalogo-service
-          predicates:
-            - Path=/categoria/**
-
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: ms-catalogo
+              uri: lb://ms-catalogo
+              predicates:
+                - Path=/categoria/**
