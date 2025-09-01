@@ -28,3 +28,7 @@ spring:
               uri: lb://ms-catalogo
               predicates:
                 - Path=/categoria/**
+            - id: sm-marca
+              uri: lb://sm-marca
+              predicates:
+                - Path=/marca/**
