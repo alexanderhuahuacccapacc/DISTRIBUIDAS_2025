@@ -1,5 +1,6 @@
 package com.example.sm_marca.Controller;
 
+import com.example.sm_marca.Dto.MarcaDto;
 import com.example.sm_marca.Entity.Marca;
 import com.example.sm_marca.Service.MarcaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class MarcaController {
 
 
     @GetMapping("/{id}")
-    public Optional<Marca> buscarPorId(@PathVariable Integer id) {
+    public MarcaDto buscarPorId(@PathVariable Integer id) {
         return marcaService.buscarPorId(id);
     }
 
