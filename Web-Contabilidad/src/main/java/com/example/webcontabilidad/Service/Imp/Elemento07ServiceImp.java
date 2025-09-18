@@ -2,6 +2,7 @@ package com.example.webcontabilidad.Service.Imp;
 
 import com.example.webcontabilidad.Entity.Elemento07;
 import com.example.webcontabilidad.Repository.ICrudGenericoRepository;
+import com.example.webcontabilidad.Repository.Elemento07Repository;
 import com.example.webcontabilidad.Service.Elemento07Service;
 import org.springframework.stereotype.Service;
 
