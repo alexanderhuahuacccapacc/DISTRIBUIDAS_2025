@@ -1,7 +1,14 @@
 package com.example.webcontabilidad.Service.Imp;
 
+import com.example.webcontabilidad.Entity.Elemento79;
+import com.example.webcontabilidad.Repository.ICrudGenericoRepository;
+import com.example.webcontabilidad.Service.Elemento79Service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Elemento79ServiceImp {
+public class Elemento79ServiceImp extends CrudGenericoServiceImp<Elemento79,Long> implements Elemento79Service {
+    @Override
+    protected ICrudGenericoRepository<Elemento79, Long> getRepo() {
+        return null;
+    }
 }
