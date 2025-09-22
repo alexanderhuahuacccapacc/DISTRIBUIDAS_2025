@@ -4,6 +4,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/Elemento10")
+@RequestMapping("/Elemento16")
 public class Elemento16Controller {
 }
