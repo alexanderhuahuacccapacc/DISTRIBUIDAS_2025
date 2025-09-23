@@ -1,43 +1,44 @@
 package com.example.webcontabilidad.Controller;
 
-import com.example.webcontabilidad.Entity.Elemento14;
-import com.example.webcontabilidad.Service.Elemento14Service;
+
+import com.example.webcontabilidad.Entity.Elemento60;
+import com.example.webcontabilidad.Service.Elemento60Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/Elemento10")
+@RequestMapping("/Elemento60")
 public class Elemento60Controller {
-    private final Elemento14Service elemento14Service;
+    private final Elemento60Service elemento60Service;
 
-    public Elemento14Controller(Elemento14Service elemento14Service) {
-        this.elemento14Service = elemento14Service;
+    public Elemento60Controller(Elemento60Service elemento60Service) {
+        this.elemento60Service = elemento60Service;
     }
 
     @GetMapping
-    public List<Elemento14> listar() {
-        return elemento14Service.findAll();
+    public List<Elemento60> listar() {
+        return elemento60Service.findAll();
     }
 
     @GetMapping("/{id}")
-    public Elemento14 buscarPorId(@PathVariable Long id) {
-        return elemento14Service.findById(id);
+    public Elemento60 buscarPorId(@PathVariable Long id) {
+        return elemento60Service.findById(id);
     }
 
     @PostMapping
-    public Elemento14 guardar(@RequestBody Elemento14 elemento14) {
-        return elemento14Service.save(elemento14);
+    public Elemento60 guardar(@RequestBody Elemento60 elemento60) {
+        return elemento60Service.save(elemento60);
     }
 
     @PutMapping("/{id}")
-    public Elemento14 actualizar(@PathVariable Long id, @RequestBody Elemento14 elemento14) {
-        return elemento14Service.update(id, elemento14);
+    public Elemento60 actualizar(@PathVariable Long id, @RequestBody Elemento60 elemento60) {
+        return elemento60Service.update(id, elemento60);
     }
 
     @DeleteMapping("/{id}")
     public String eliminar(@PathVariable Long id) {
-        elemento14Service.delete(id);
+        elemento60Service.delete(id);
         return "Elemento eliminado";
     }
 }
