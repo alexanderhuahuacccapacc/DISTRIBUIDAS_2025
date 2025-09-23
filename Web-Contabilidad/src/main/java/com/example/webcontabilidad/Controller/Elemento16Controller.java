@@ -1,7 +1,8 @@
 package com.example.webcontabilidad.Controller;
 
-import com.example.webcontabilidad.Entity.Elemento14;
-import com.example.webcontabilidad.Service.Elemento14Service;
+
+import com.example.webcontabilidad.Entity.Elemento16;
+import com.example.webcontabilidad.Service.Elemento16Service;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,35 +10,35 @@ import java.util.List;
 @RestController
 @RequestMapping("/Elemento16")
 public class Elemento16Controller {
-    private final Elemento14Service elemento14Service;
+    private final Elemento16Service elemento16Service;
 
-    public Elemento14Controller(Elemento14Service elemento14Service) {
-        this.elemento14Service = elemento14Service;
+    public Elemento16Controller(Elemento16Service elemento16Service) {
+        this.elemento16Service = elemento16Service;
     }
 
     @GetMapping
-    public List<Elemento14> listar() {
-        return elemento14Service.findAll();
+    public List<Elemento16> listar() {
+        return elemento16Service.findAll();
     }
 
     @GetMapping("/{id}")
-    public Elemento14 buscarPorId(@PathVariable Long id) {
-        return elemento14Service.findById(id);
+    public Elemento16 buscarPorId(@PathVariable Long id) {
+        return elemento16Service.findById(id);
     }
 
     @PostMapping
-    public Elemento14 guardar(@RequestBody Elemento14 elemento14) {
-        return elemento14Service.save(elemento14);
+    public Elemento16 guardar(@RequestBody Elemento16 elemento16) {
+        return elemento16Service.save(elemento16);
     }
 
     @PutMapping("/{id}")
-    public Elemento14 actualizar(@PathVariable Long id, @RequestBody Elemento14 elemento14) {
-        return elemento14Service.update(id, elemento14);
+    public Elemento16 actualizar(@PathVariable Long id, @RequestBody Elemento16 elemento16) {
+        return elemento16Service.update(id, elemento16);
     }
 
     @DeleteMapping("/{id}")
     public String eliminar(@PathVariable Long id) {
-        elemento14Service.delete(id);
+        elemento16Service.delete(id);
         return "Elemento eliminado";
     }
 }
