@@ -14,6 +14,6 @@ public class Elemento77ServiceImp extends CrudGenericoServiceImp<Elemento77,Long
 
     @Override
     protected ICrudGenericoRepository<Elemento77, Long> getRepo() {
-        return null;
+        return repo77;
     }
 }
