@@ -1,9 +1,12 @@
 package com.example.sm_marca.Controller;
 
+import com.example.sm_marca.Dto.CategoriaDto;
 import com.example.sm_marca.Dto.MarcaDto;
 import com.example.sm_marca.Entity.Marca;
 import com.example.sm_marca.Service.MarcaService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +28,7 @@ public class MarcaController {
     public MarcaDto buscarPorId(@PathVariable Integer id) {
         return marcaService.buscarPorId(id);
     }
+
 
     @PostMapping
     public Marca guardar(Marca marca) {
