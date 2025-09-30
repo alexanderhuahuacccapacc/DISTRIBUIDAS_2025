@@ -2,10 +2,12 @@ package com.example.sm_marca.Service.Imp;
 
 import com.example.sm_marca.Dto.CategoriaDto;
 import com.example.sm_marca.Dto.MarcaDto;
+import com.example.sm_marca.Dto.MarcaDto2;
 import com.example.sm_marca.Entity.Marca;
 import com.example.sm_marca.Repository.MarcaRepository;
 import com.example.sm_marca.Service.MarcaService;
 import com.example.sm_marca.fegin.CatalogoFegin;
+import com.example.sm_marca.fegin.Marca2Fegin;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +23,10 @@ public class MarcaServiceImp implements MarcaService {
     private MarcaRepository marcaRepository;
     @Autowired
     private CatalogoFegin catalogoFegin;
+
+    @Autowired
+    private Marca2Fegin marca2Fegin;
+
     @Override
     public List<Marca> listar() {
         return marcaRepository.findAll();
@@ -30,11 +36,13 @@ public class MarcaServiceImp implements MarcaService {
     public MarcaDto buscarPorId(Integer id) {
         Marca marca = marcaRepository.findById(id).get();
         CategoriaDto categoriaDto = catalogoFegin.buscarPorId(marca.getIdCategoria());
+        MarcaDto2 marcaDto2 = marca2Fegin.buscarPorId(marca.getId());
         MarcaDto marcaDto = new MarcaDto();
         marcaDto.setId(marca.getId());
         marcaDto.setNombre(marca.getNombre());
         marcaDto.setDescripcion(marca.getDescripcion());
         marcaDto.setCatagoria(categoriaDto);
+        marcaDto.setNombre(marcaDto2.getNombre());
         return marcaDto;
     }
 

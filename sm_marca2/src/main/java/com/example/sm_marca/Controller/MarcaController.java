@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/marca")
+@RequestMapping("/marca2")
 public class MarcaController {
     @Autowired
     private MarcaService marcaService;
