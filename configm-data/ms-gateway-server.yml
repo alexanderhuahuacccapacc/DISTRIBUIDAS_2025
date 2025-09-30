@@ -5,9 +5,11 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8095/eureka
+      #defaultZone: http://localhost:8095/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
   instance:
-    hostname: localhost
+    #hostname: localhost   #randon.value. = cualquier puesto no en uso
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 
 spring:
