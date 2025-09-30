@@ -9,5 +9,5 @@ public class MarcaDto {
     private String descripcion;
     private Integer idCategoria;
     private CategoriaDto catagoria;
-    private MarcaDto2 marca;
+    private MarcaDto2 marca2;
 }

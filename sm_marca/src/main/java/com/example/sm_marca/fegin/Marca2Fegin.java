@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "sm_marca2", path = "/marca2")
+@FeignClient(name = "sm-marca2", path = "/marca2")
 public interface Marca2Fegin {
     @GetMapping("/{id}")
     @CircuitBreaker(name = "categoriaListarPorIdCB**", fallbackMethod = "fallbackCategoria")

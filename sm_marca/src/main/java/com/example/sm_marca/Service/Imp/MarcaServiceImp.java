@@ -42,7 +42,7 @@ public class MarcaServiceImp implements MarcaService {
         marcaDto.setNombre(marca.getNombre());
         marcaDto.setDescripcion(marca.getDescripcion());
         marcaDto.setCatagoria(categoriaDto);
-        marcaDto.setNombre(marcaDto2.getNombre());
+        marcaDto.setMarca2(marcaDto2);
         return marcaDto;
     }
 
