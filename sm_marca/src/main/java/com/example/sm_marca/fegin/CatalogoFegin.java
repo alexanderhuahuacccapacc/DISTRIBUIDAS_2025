@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "ms-catalogo", path = "/categoria")
 public interface CatalogoFegin {
     @GetMapping("/{id}")
-    @CircuitBreaker(name = "marca2Listar2PorIdCB", fallbackMethod = "fallbackMarca2")
+    @CircuitBreaker(name = "categoriaListarPorIdCB", fallbackMethod = "fallbackCategoria")
     public CategoriaDto buscarPorId(@PathVariable Integer id);
 
-    default CategoriaDto fallbackMarca2(Integer id, Exception e) {
+    default CategoriaDto fallbackCategoria(Integer id, Exception e) {
         CategoriaDto categoriaDto = new CategoriaDto();
         categoriaDto.setId(9000000);
         categoriaDto.setNombre("No se pudo obtener la categoria");

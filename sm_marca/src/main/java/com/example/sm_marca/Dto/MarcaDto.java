@@ -10,4 +10,5 @@ public class MarcaDto {
     private Integer idCategoria;
     private CategoriaDto catagoria;
     private MarcaDto2 marca2;
+    private PostDto post;
 }
