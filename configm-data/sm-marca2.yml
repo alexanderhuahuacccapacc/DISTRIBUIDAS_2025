@@ -3,7 +3,7 @@ server:
 spring:
 
   application:
-    name: sm_marca2
+    name: sm-marca2
 
   datasource:
     url: jdbc:mysql://localhost:3306/ms-marca2
