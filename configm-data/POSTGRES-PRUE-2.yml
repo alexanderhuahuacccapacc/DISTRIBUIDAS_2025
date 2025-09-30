@@ -4,7 +4,7 @@ server:
 spring:
 
   application:
-    name: POSTGRES_PRUE_2
+    name: POSTGRES-PRUE-2
 
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres_prueba
