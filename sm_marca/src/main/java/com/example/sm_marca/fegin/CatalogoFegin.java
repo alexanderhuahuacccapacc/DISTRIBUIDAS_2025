@@ -15,6 +15,7 @@ public interface CatalogoFegin {
     default CategoriaDto fallbackCategoria(Integer id, Exception e) {
         CategoriaDto categoriaDto = new CategoriaDto();
         categoriaDto.setId(9000000);
+        categoriaDto.setNombre("No se pudo obtener la categoria");
         return categoriaDto;
     }
 }
