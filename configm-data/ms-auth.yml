@@ -1,5 +1,4 @@
 server:
-
   port: ${PORT:${SERVERS_PORT:0}}
 
 spring:
@@ -12,7 +11,6 @@ spring:
     url: jdbc:mysql://localhost:3306/ms_auth
     username: root
     password: 1234567
-
 eureka:
   client:
     serviceUrl:
