@@ -16,11 +16,15 @@ public class AuthUserController {
 
     @PostMapping("/login")
     public ResponseEntity<TokenDto> login(@RequestBody AuthUserDto authUserDto) {
+        System.out.println("Request recibido: " + authUserDto);
         TokenDto tokenDto = authUserService.login(authUserDto);
-        if (tokenDto == null)
+        if (tokenDto == null) {
+            System.out.println("🔴 Login fallido: credenciales incorrectas o usuario no encontrado");
             return ResponseEntity.badRequest().build();
+        }
         return ResponseEntity.ok(tokenDto);
     }
+
 
     @PostMapping("/validate")
     public ResponseEntity<TokenDto> validate(@RequestParam String token) {
