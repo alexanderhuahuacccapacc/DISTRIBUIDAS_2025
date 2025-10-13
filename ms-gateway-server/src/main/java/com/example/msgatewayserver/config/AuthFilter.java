@@ -25,13 +25,13 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
             if(!exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION))
                 return onError(exchange, HttpStatus.BAD_REQUEST);
             String tokenHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
-            String [] chunks = tokenHeader.split(" ");
+            String [] chunks = tokenHeader.split(" ");  //split investigar
             if(chunks.length != 2 || !chunks[0].equals("Bearer"))
                 return onError(exchange, HttpStatus.BAD_REQUEST);
             return webClient.build()
                     .post()
                     .uri("http://ms-auth-service/auth/validate?token=" + chunks[1])
-                    .retrieve().bodyToMono(TokenDto.class)
+                    .retrieve().bodyToMono(TokenDto.class)        //bodytomono = mapea el tpoken
                     .map(t -> {
                         t.getToken();
                         return exchange;

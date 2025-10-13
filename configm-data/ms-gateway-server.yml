@@ -36,3 +36,8 @@ spring:
               uri: lb://sm-marca
               predicates:
                 - Path=/marca/**
+            - id: ms-auth
+              uri: lb://ms-auth
+              predicates:
+                - Path=/auth/**                                                                                                                                                                                                                                                                                                                                                          ath=/auth/**
+
