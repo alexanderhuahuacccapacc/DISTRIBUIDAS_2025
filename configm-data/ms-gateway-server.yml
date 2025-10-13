@@ -30,6 +30,8 @@ spring:
               uri: lb://ms-catalogo
               predicates:
                 - Path=/categoria/**
+              filters:
+                - AuthFilter
             - id: sm-marca
               uri: lb://sm-marca
               predicates:
