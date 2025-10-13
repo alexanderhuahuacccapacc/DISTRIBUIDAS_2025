@@ -37,7 +37,8 @@ spring:
               uri: lb://sm-marca
               predicates:
                 - Path=/marca/**
-              
+              filters:
+                - AuthFilter
 
             - id: ms-auth
               uri: lb://ms-auth
