@@ -32,12 +32,14 @@ spring:
                 - Path=/categoria/**
               filters:
                 - AuthFilter
+
             - id: sm-marca
               uri: lb://sm-marca
               predicates:
                 - Path=/marca/**
               filters:
                 - AuthFilter
+
             - id: ms-auth
               uri: lb://ms-auth
               predicates:
