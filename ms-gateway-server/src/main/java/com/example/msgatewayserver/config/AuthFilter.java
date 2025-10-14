@@ -38,7 +38,8 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
 
             return webClient.build()
                     .post()
-                    .uri("http://ms-auth/auth/validate?token=" + token)
+                    .uri("http://localhost:9090/auth/validate")
+                    .header(HttpHeaders.AUTHORIZATION, "Bearer " + token) // 🔹 se envía por header
                     .retrieve()
                     .bodyToMono(TokenDto.class)
                     .map(t -> exchange)
