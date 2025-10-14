@@ -19,27 +19,28 @@ spring:
 
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: ms-catalogo
+              uri: lb://ms-catalogo
+              predicates:
+                - Path=/categoria/**
+              filters:
+                - AuthFilter
 
-      routes:
-        - id: ms-catalogo
-          uri: lb://ms-catalogo
-          predicates:
-            - Path=/categoria/**
-          filters:
-            - AuthFilter
-
-        - id: sm-marca
-          uri: lb://sm-marca
-          predicates:
-            - Path=/marca/**
-          filters:
-            - AuthFilter
-
-        - id: ms-auth
-          uri: lb://ms-auth
-          predicates:
-            - Path=/auth/**
+            - id: sm-marca
+              uri: lb://sm-marca
+              predicates:
+                - Path=/marca/**
+              filters:
+                - AuthFilter
+                
+            - id: ms-auth
+              uri: lb://ms-auth
+              predicates:
+                - Path=/auth/**
