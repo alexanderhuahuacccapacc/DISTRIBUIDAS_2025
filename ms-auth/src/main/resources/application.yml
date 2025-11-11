@@ -10,3 +10,4 @@ spring:
       - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
 jwt:
   secret: secret
+ 
